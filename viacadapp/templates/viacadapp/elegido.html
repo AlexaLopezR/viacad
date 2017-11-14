@@ -1,0 +1,19 @@
+{% extends 'viacadapp/base.html' %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+	<div class="col-sm-6">
+		<div class="form-group" align="center-justify"  >
+			{% csrf_token %}
+			{{ form.as_p }}
+		<button type="submit" class="btn btn-default" style="background-color: #F38508; color:#FFF">Registrar</button>
+		</div>
+	</div>
+    <div class="col-sm-6">
+        <h3>Horario disponible del profesor</h3>
+    	<iframe src="https://calendar.google.com/calendar/embed?src=alexacaro14%40gmail.com&ctz=America%2FBogota" style="border: 0" width="400" height="200" frameborder="0" scrolling="no"></iframe>
+	</div>
+</form>	
+
+
+{% endblock %}

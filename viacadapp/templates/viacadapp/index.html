@@ -1,0 +1,84 @@
+{% extends 'viacadapp/base.html'%}
+{% block content%}
+    <main class="site-main">
+        <section class="hero_area">
+            <div class="hero_content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1>VIAcad</h1>
+                            <h2>El mejor camino para el aprendizaje</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="boxes_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="box">
+                            <h3>QUIERO SER TUTOR</h3>
+                            <p>Si te gusta enseñar, hay muchos aquí que quieren aprender.</p>
+                            <i class="fa fa-pencil"></i>
+                            <div align="center">
+                            	<a href="/registroProfesores"><button style="background-color: #F38508; color: #FFF; height: 80%; width: 80%" align="center" >¡Regístrate ya!</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="box" >
+                            <h3>QUIERO BUSCAR TUTOR</h3>
+                            <p>Encuentra aquí el tutor que necesitas.</p>
+                            <i class="fa fa-address-book-o"></i>
+                            <div align="center">
+                            	<a href="/registroAlumnos"><button style="background-color: #F38508; color: #FFF; height: 80%; width: 80%" align="center" >Buscar tutores</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <h2 class="section-title">SERVICIOS</h2>
+            <p class="desc">Cuenta con nosotros para lo que necesites</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <i class="fa fa-users" ></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Enseñanza personalizada</h4>
+                                <p>Encuentra el tutor que necesitas para ese tema que quieres reforzar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <i class="fa fa-briefcase"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Amplía tus ingresos y tu hoja de vida</h4>
+                                <p>Únete a nuestros tutores y adquiere experiencia laboral .</p>
+                            </div>
+                        </div>
+                    </div>
+                                        
+            </div>
+        </section>
+        
+    </main>
+ <script >
+        if ('{{message}}'==1){
+            alert('Registro exitoso. Inicie sesión');
+        }
+
+       
+ </script>
+
+{% endblock %}
+

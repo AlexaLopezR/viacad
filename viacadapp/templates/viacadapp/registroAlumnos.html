@@ -1,0 +1,16 @@
+{% extends 'viacadapp/base.html' %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+	<div class="col-sm-12">
+		<div class="form-group" align="center-justify"  >
+			{% csrf_token %}
+			{{ form.as_p }}
+		<button type="submit" class="btn btn-default" style="background-color: #F38508; color:#FFF">Registrar</button>
+		</div>
+	</div>
+  
+</form>	
+
+
+{% endblock %}
