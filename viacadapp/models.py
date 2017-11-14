@@ -27,3 +27,9 @@ class Solicitud(models.Model):
 	responsable= models.CharField(max_length=80)
 	direccion=models.CharField(max_length=30)
 	fecha=models.DateTimeField(auto_now_add=True)
+
+class Votaciones(models.Model):
+	nombreprofesor=models.CharField(max_length=80)
+	votacion=models.DecimalField( max_digits=5, decimal_places=2)
+
+		

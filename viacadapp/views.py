@@ -86,11 +86,28 @@ def buscarprof(request):
 		if form.is_valid():
 			sheet=form.cleaned_data['category']	
 			request.session['sheet']=sheet #Materia seleccionada
-			return redirect("/elegido")
-
+			print(sheet)
+			name=list(Registro.objects.values_list('nombrecompleto',flat=True).filter(materia__contains=request.session['sheet']))
+			request.session['name']=name #profesor seleccionado
+			infop=[]
+			correopp=[]
+			costohorapp=[]
+			for i in range (0,len(name)):
+			  info=list(Registro.objects.values_list('cualidades',flat=True).filter(nombrecompleto__contains=name[i]))
+			  infop.append(info)
+			  correop=list(Registro.objects.values_list('correo',flat=True).filter(nombrecompleto__contains=name[i]))
+			  correopp.append(correop)
+			  costohorap=list(Registro.objects.values_list('costohora',flat=True).filter(nombrecompleto__contains=name[i]))
+			  costohorapp.append(costohorap)
+			print(infop)
+			print(correopp)
+			print(costohorapp)
+			print(name)
+			#return redirect("nombreprof/")
 	else:
 		form=ElegirMateria()
-		return render(request, 'viacadapp/buscarprof.html',{'form':form})
+    
+	return render(request, 'viacadapp/buscarprof.html',{'form':form})
 
 def registroSolicitud(request):
 	if request.method=='POST':
